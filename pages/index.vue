@@ -1,8 +1,6 @@
 <template>
-    <Button icon="pi pi-home" label="Save" />
+  <main-layout></main-layout>
 </template>
-<script lang="ts">
-import Button from 'primevue/button';
-export default {};
+<script lang="ts" setup>
+import MainLayout from "~/layouts/main-layout.vue";
 </script>
-<style lang="scss"></style>
