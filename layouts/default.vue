@@ -1,9 +1,11 @@
 <template>
-  <menu-toolbar></menu-toolbar>
-  <div>
-    <slot> </slot>
+  <div class="site-wrapper">
+    <menu-toolbar></menu-toolbar>
+    <div class="main-page">
+      <slot> </slot>
+    </div>
+    <footer-main></footer-main>
   </div>
-  <footer-main></footer-main>
 </template>
 <script lang="ts" setup>
 import menuToolbar from './menu-toolbar.vue';

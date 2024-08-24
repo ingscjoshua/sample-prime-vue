@@ -1,5 +1,5 @@
 <template>
-  <Panel header="Header" class="footer-bottom">
+  <Panel header="Header">
     <p class="m-0">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -14,8 +14,3 @@
 <script setup>
 import Panel from 'primevue/panel';
 </script>
-<style lang="scss">
-.footer-bottom {
-  padding: 15px 0;
-}
-</style>
