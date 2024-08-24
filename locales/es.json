@@ -1,0 +1,10 @@
+{
+  "general": {
+    "layout":{
+      "menu": {
+        "start": "Inicio",
+        "new":"Lo mas nuevo"
+      }
+    }
+  }
+}

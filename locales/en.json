@@ -1,0 +1,9 @@
+{
+  "general": {
+    "layout":{
+      "menu": {
+        "start": "Home"
+      }
+    }
+  }
+}
