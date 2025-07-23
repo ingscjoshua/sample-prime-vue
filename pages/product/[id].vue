@@ -49,12 +49,14 @@ import { useRoute, useRouter } from 'vue-router';
 import ProductService from '~/services/ProductService';
 import { useCartStore } from '~/stores/cart';
 import { useToast } from 'primevue/usetoast';
+import { useI18n } from 'vue-i18n';
 
 const route = useRoute();
 const router = useRouter();
 const productService = new ProductService();
 const cartStore = useCartStore();
 const toast = useToast();
+const { t } = useI18n();
 
 const product = ref<any>(null);
 const loading = ref(true);
@@ -88,8 +90,8 @@ function addToCart() {
     }
     toast.add({
       severity: 'success',
-      summary: $t('shop.toast.addedToCart'),
-      detail: $t('shop.toast.itemsAdded', { count: quantity.value }),
+      summary: t('shop.toast.addedToCart'),
+      detail: t('shop.toast.itemsAdded', { count: quantity.value }),
       life: 3000
     });
   }

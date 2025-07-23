@@ -107,10 +107,12 @@
 import { useCartStore } from '~/stores/cart';
 import { useRouter } from 'vue-router';
 import { useToast } from 'primevue/usetoast';
+import { useI18n } from 'vue-i18n';
 
 const cartStore = useCartStore();
 const router = useRouter();
 const toast = useToast();
+const { t } = useI18n();
 
 function updateQuantity(productId: number, quantity: number) {
   cartStore.updateQuantity(productId, quantity);
@@ -123,8 +125,8 @@ function removeItem(productId: number) {
     cartStore.removeItem(productId);
     toast.add({
       severity: 'info',
-      summary: $t('shop.toast.itemRemoved'),
-      detail: $t('shop.toast.productRemoved', { product: itemName }),
+      summary: t('shop.toast.itemRemoved'),
+      detail: t('shop.toast.productRemoved', { product: itemName }),
       life: 3000
     });
   }
@@ -134,8 +136,8 @@ function clearCart() {
   cartStore.clearCart();
   toast.add({
     severity: 'info',
-    summary: $t('shop.toast.cartCleared'),
-    detail: $t('shop.toast.allItemsRemoved'),
+    summary: t('shop.toast.cartCleared'),
+    detail: t('shop.toast.allItemsRemoved'),
     life: 3000
   });
 }

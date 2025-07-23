@@ -48,11 +48,14 @@ import ProductService from '~/services/ProductService';
 import { useCartStore } from '~/stores/cart';
 import { useRouter } from 'vue-router';
 import { useToast } from 'primevue/usetoast';
+import { useI18n } from 'vue-i18n';
+
 
 const productService = new ProductService();
 const cartStore = useCartStore();
 const router = useRouter();
 const toast = useToast();
+const { t } = useI18n();
 
 const products = ref<any[]>([]);
 const categories = ref<string[]>([]);
@@ -106,8 +109,8 @@ function addToCart(product: any) {
   cartStore.addItem(product);
   toast.add({
     severity: 'success',
-    summary: $t('shop.toast.addedToCart'),
-    detail: $t('shop.toast.productAdded', { product: product.title }),
+    summary: t('shop.toast.addedToCart'),
+    detail: t('shop.toast.productAdded', { product: product.title }),
     life: 3000
   });
 }
