@@ -58,7 +58,9 @@ const cartStore = useCartStore();
 const toast = useToast();
 const { t } = useI18n();
 
-const product = ref<any>(null);
+import type { Product } from '~/models/product';
+
+const product = ref<Product | null>(null);
 const loading = ref(true);
 const quantity = ref(1);
 

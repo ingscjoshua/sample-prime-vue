@@ -1,8 +1,10 @@
+import type { LoginCredentials, RegisterData, AuthResponse, User } from '~/models/user';
+
 // API service for user authentication
 export default class AuthService {
   private baseUrl = 'https://fakestoreapi.com'; // Using a fake store API for demonstration
 
-  async login(username: string, password: string): Promise<any> {
+  async login(username: string, password: string): Promise<AuthResponse> {
     try {
       const response = await fetch(`${this.baseUrl}/auth/login`, {
         method: 'POST',
@@ -26,16 +28,7 @@ export default class AuthService {
     }
   }
 
-  async register(userData: {
-    email: string;
-    username: string;
-    password: string;
-    name: {
-      firstname: string;
-      lastname: string;
-    };
-    phone: string;
-  }): Promise<any> {
+  async register(userData: RegisterData): Promise<User> {
     try {
       // For demo purposes, we'll simulate a successful registration
       // In a real app, you would make an API call like this:
@@ -59,7 +52,7 @@ export default class AuthService {
     }
   }
 
-  async socialLogin(provider: string, token: string): Promise<any> {
+  async socialLogin(provider: string, token: string): Promise<User> {
     try {
       // In a real app, you would validate the social token with your backend
       // For demo purposes, we'll simulate a successful login
@@ -79,7 +72,7 @@ export default class AuthService {
     }
   }
 
-  async getUserProfile(token: string): Promise<any> {
+  async getUserProfile(token: string): Promise<User> {
     try {
       const response = await fetch(`${this.baseUrl}/users/1`, {
         headers: {

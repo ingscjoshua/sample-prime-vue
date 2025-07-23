@@ -1,10 +1,12 @@
 import { defineStore } from 'pinia';
-import { useToast } from 'primevue/usetoast';
+import type { Product } from '~/models/product';
+import type { CartItem } from '~/models/cart';
+import type { User } from '~/models/user';
 
 export const useCartStore = defineStore('cart', {
   state: () => ({
-    items: [],
-    user: null,
+    items: [] as CartItem[],
+    user: null as User | null,
   }),
   
   getters: {
@@ -14,7 +16,7 @@ export const useCartStore = defineStore('cart', {
   },
   
   actions: {
-    addItem(product) {
+    addItem(product: Product) {
       const existingItem = this.items.find(item => item.id === product.id);
       if (existingItem) {
         existingItem.quantity++;
@@ -26,7 +28,7 @@ export const useCartStore = defineStore('cart', {
       // Toast notification is handled in the component that calls this method
     },
     
-    removeItem(productId) {
+    removeItem(productId: number) {
       const index = this.items.findIndex(item => item.id === productId);
       if (index !== -1) {
         this.items.splice(index, 1);
@@ -36,7 +38,7 @@ export const useCartStore = defineStore('cart', {
       }
     },
     
-    updateQuantity(productId, quantity) {
+    updateQuantity(productId: number, quantity: number) {
       const item = this.items.find(item => item.id === productId);
       if (item) {
         item.quantity = quantity;
@@ -51,7 +53,7 @@ export const useCartStore = defineStore('cart', {
       // Toast notification is handled in the component that calls this method
     },
     
-    setUser(user) {
+    setUser(user: User) {
       this.user = user;
       this.saveToSession();
     },

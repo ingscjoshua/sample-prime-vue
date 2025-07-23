@@ -57,7 +57,9 @@ const router = useRouter();
 const toast = useToast();
 const { t } = useI18n();
 
-const products = ref<any[]>([]);
+import type { Product } from '~/models/product';
+
+const products = ref<Product[]>([]);
 const categories = ref<string[]>([]);
 const selectedCategory = ref<string | null>(null);
 const loading = ref(true);
@@ -105,7 +107,7 @@ async function filterByCategory() {
   }
 }
 
-function addToCart(product: any) {
+function addToCart(product: Product) {
   cartStore.addItem(product);
   toast.add({
     severity: 'success',
