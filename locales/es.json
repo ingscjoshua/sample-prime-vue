@@ -5,6 +5,90 @@
         "start": "Inicio",
         "new":"Lo mas nuevo"
       }
+    },
+    "home": {
+      "welcome": "Bienvenido a Nuestra Aplicación",
+      "description": "Esta es una aplicación de muestra construida con Nuxt 3 y PrimeVue."
+    },
+    "footer": {
+      "about": "Sobre Nosotros",
+      "aboutText": "Somos una empresa dedicada a proporcionar aplicaciones web de alta calidad.",
+      "contact": "Contacto",
+      "contactText": "Correo: info@example.com | Teléfono: +1 234 567 890"
+    }
+  },
+  "shop": {
+    "home": {
+      "featured": "Productos Destacados"
+    },
+    "menu": {
+      "shop": "Tienda",
+      "cart": "Carrito"
+    },
+    "products": {
+      "title": "Productos",
+      "selectCategory": "Seleccionar Categoría"
+    },
+    "product": {
+      "addToCart": "Añadir al Carrito",
+      "notFound": "Producto no encontrado",
+      "backToShop": "Volver a la Tienda",
+      "viewDetails": "Ver Detalles"
+    },
+    "cart": {
+      "title": "Carrito de Compras",
+      "empty": "Tu carrito está vacío",
+      "continueShopping": "Continuar Comprando",
+      "product": "Producto",
+      "price": "Precio",
+      "quantity": "Cantidad",
+      "total": "Total",
+      "orderSummary": "Resumen del Pedido",
+      "items": "Artículos",
+      "subtotal": "Subtotal",
+      "shipping": "Envío",
+      "checkout": "Finalizar Compra",
+      "clearCart": "Vaciar Carrito",
+      "loginRequired": "Por favor inicia sesión para acceder a tu carrito de compras"
+    },
+    "auth": {
+      "login": "Iniciar Sesión",
+      "logout": "Cerrar Sesión",
+      "username": "Usuario",
+      "usernamePlaceholder": "Ingresa tu usuario",
+      "usernameRequired": "El usuario es requerido",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Ingresa tu contraseña",
+      "passwordRequired": "La contraseña es requerida",
+      "rememberMe": "Recordarme",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "noAccount": "¿No tienes una cuenta?",
+      "register": "Registrarse",
+      "loginError": "Usuario o contraseña inválidos",
+      "orLoginWith": "O inicia sesión con",
+      "orSignUpWith": "O regístrate con",
+      "socialLoginError": "Error al iniciar sesión con {provider}",
+      "firstname": "Nombre",
+      "firstnamePlaceholder": "Ingresa tu nombre",
+      "firstnameRequired": "El nombre es requerido",
+      "lastname": "Apellido",
+      "lastnamePlaceholder": "Ingresa tu apellido",
+      "lastnameRequired": "El apellido es requerido",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "Ingresa tu correo electrónico",
+      "emailRequired": "El correo electrónico es requerido",
+      "emailInvalid": "Por favor ingresa un correo electrónico válido",
+      "phone": "Número de Teléfono",
+      "phonePlaceholder": "Ingresa tu número de teléfono",
+      "phoneRequired": "El número de teléfono es requerido",
+      "confirmPassword": "Confirmar Contraseña",
+      "confirmPasswordPlaceholder": "Confirma tu contraseña",
+      "confirmPasswordRequired": "Por favor confirma tu contraseña",
+      "passwordsDoNotMatch": "Las contraseñas no coinciden",
+      "acceptTerms": "Acepto los términos y condiciones",
+      "termsRequired": "Debes aceptar los términos y condiciones",
+      "registrationError": "Error durante el registro",
+      "alreadyHaveAccount": "¿Ya tienes una cuenta?"
     }
   }
 }

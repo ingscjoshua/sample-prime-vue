@@ -1,9 +1,2 @@
 @import 'primeicons/primeicons.css';
-.site-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 98vh;
-}
-.main-page {
-  flex: 1;
-}
+@import './app.scss';

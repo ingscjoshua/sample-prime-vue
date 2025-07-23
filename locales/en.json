@@ -2,8 +2,93 @@
   "general": {
     "layout":{
       "menu": {
-        "start": "Home"
+        "start": "Home",
+        "new": "What's New"
       }
+    },
+    "home": {
+      "welcome": "Welcome to Our Application",
+      "description": "This is a sample application built with Nuxt 3 and PrimeVue."
+    },
+    "footer": {
+      "about": "About Us",
+      "aboutText": "We are a company dedicated to providing high-quality web applications.",
+      "contact": "Contact",
+      "contactText": "Email: info@example.com | Phone: +1 234 567 890"
+    }
+  },
+  "shop": {
+    "home": {
+      "featured": "Featured Products"
+    },
+    "menu": {
+      "shop": "Shop",
+      "cart": "Cart"
+    },
+    "products": {
+      "title": "Products",
+      "selectCategory": "Select Category"
+    },
+    "product": {
+      "addToCart": "Add to Cart",
+      "notFound": "Product not found",
+      "backToShop": "Back to Shop",
+      "viewDetails": "View Details"
+    },
+    "cart": {
+      "title": "Shopping Cart",
+      "empty": "Your cart is empty",
+      "continueShopping": "Continue Shopping",
+      "product": "Product",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total": "Total",
+      "orderSummary": "Order Summary",
+      "items": "Items",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "checkout": "Checkout",
+      "clearCart": "Clear Cart",
+      "loginRequired": "Please log in to access your shopping cart"
+    },
+    "auth": {
+      "login": "Login",
+      "logout": "Logout",
+      "username": "Username",
+      "usernamePlaceholder": "Enter your username",
+      "usernameRequired": "Username is required",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "passwordRequired": "Password is required",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "register": "Register",
+      "loginError": "Invalid username or password",
+      "orLoginWith": "Or login with",
+      "orSignUpWith": "Or sign up with",
+      "socialLoginError": "Error logging in with {provider}",
+      "firstname": "First Name",
+      "firstnamePlaceholder": "Enter your first name",
+      "firstnameRequired": "First name is required",
+      "lastname": "Last Name",
+      "lastnamePlaceholder": "Enter your last name",
+      "lastnameRequired": "Last name is required",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter your phone number",
+      "phoneRequired": "Phone number is required",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Confirm your password",
+      "confirmPasswordRequired": "Please confirm your password",
+      "passwordsDoNotMatch": "Passwords do not match",
+      "acceptTerms": "I accept the terms and conditions",
+      "termsRequired": "You must accept the terms and conditions",
+      "registrationError": "Error during registration",
+      "alreadyHaveAccount": "Already have an account?"
     }
   }
 }

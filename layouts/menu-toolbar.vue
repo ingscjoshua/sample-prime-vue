@@ -27,24 +27,69 @@
       </template>
       <template #end>
         <div class="flex items-center gap-2">
-          <InputText placeholder="Search" type="text" class="w-32 sm:w-auto" />
+          <div v-if="isLoggedIn">
+            <Button icon="pi pi-user" text rounded aria-label="User" />
+            <Button :label="$t('shop.auth.logout')" icon="pi pi-sign-out" text @click="logout" />
+          </div>
+          <Button v-else :label="$t('shop.auth.login')" icon="pi pi-sign-in" @click="goToLogin" />
         </div>
       </template>
     </Menubar>
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue';
+<script setup lang="ts">
+import { ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
+import { useCartStore } from '~/stores/cart';
 
-const items = ref([
+interface MenuItem {
+  label: string;
+  icon: string;
+  badge?: string;
+  shortcut?: string;
+  command?: () => void;
+}
+
+const router = useRouter();
+const cartStore = useCartStore();
+
+const cartItemCount = computed(() => cartStore.totalItems);
+const isLoggedIn = computed(() => cartStore.isAuthenticated);
+
+const menuItems = computed(() => [
   {
     label: 'general.layout.menu.start',
     icon: 'pi pi-home',
+    command: () => router.push('/')
   },
   {
-    label: 'general.layout.menu.new',
-    icon: 'pi pi-sparkles',
+    label: 'shop.menu.shop',
+    icon: 'pi pi-shopping-bag',
+    command: () => router.push('/shop')
+  },
+  {
+    label: 'shop.menu.cart',
+    icon: 'pi pi-shopping-cart',
+    badge: cartItemCount.value ? cartItemCount.value.toString() : undefined,
+    command: () => {
+      if (isLoggedIn.value) {
+        router.push('/cart');
+      } else {
+        router.push('/login?redirect=/cart');
+      }
+    }
   },
 ]);
+
+const items = computed(() => menuItems.value);
+
+function goToLogin() {
+  router.push('/login');
+}
+
+function logout() {
+  cartStore.logout();
+  router.push('/');
+}
 </script>
