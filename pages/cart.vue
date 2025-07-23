@@ -123,8 +123,8 @@ function removeItem(productId: number) {
     cartStore.removeItem(productId);
     toast.add({
       severity: 'info',
-      summary: 'Item Removed',
-      detail: `${itemName} removed from your cart`,
+      summary: $t('shop.toast.itemRemoved'),
+      detail: $t('shop.toast.productRemoved', { product: itemName }),
       life: 3000
     });
   }
@@ -134,8 +134,8 @@ function clearCart() {
   cartStore.clearCart();
   toast.add({
     severity: 'info',
-    summary: 'Cart Cleared',
-    detail: 'All items have been removed from your cart',
+    summary: $t('shop.toast.cartCleared'),
+    detail: $t('shop.toast.allItemsRemoved'),
     life: 3000
   });
 }

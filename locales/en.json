@@ -18,6 +18,15 @@
     }
   },
   "shop": {
+    "toast": {
+      "addedToCart": "Added to Cart",
+      "productAdded": "{product} added to your cart",
+      "itemsAdded": "{count} item(s) added to your cart",
+      "itemRemoved": "Item Removed",
+      "productRemoved": "{product} removed from your cart",
+      "cartCleared": "Cart Cleared",
+      "allItemsRemoved": "All items have been removed from your cart"
+    },
     "home": {
       "featured": "Featured Products"
     },

@@ -106,8 +106,8 @@ function addToCart(product: any) {
   cartStore.addItem(product);
   toast.add({
     severity: 'success',
-    summary: 'Added to Cart',
-    detail: `${product.title} added to your cart`,
+    summary: $t('shop.toast.addedToCart'),
+    detail: $t('shop.toast.productAdded', { product: product.title }),
     life: 3000
   });
 }

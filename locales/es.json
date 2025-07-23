@@ -18,6 +18,15 @@
     }
   },
   "shop": {
+    "toast": {
+      "addedToCart": "Añadido al Carrito",
+      "productAdded": "{product} añadido a tu carrito",
+      "itemsAdded": "{count} artículo(s) añadido(s) a tu carrito",
+      "itemRemoved": "Artículo Eliminado",
+      "productRemoved": "{product} eliminado de tu carrito",
+      "cartCleared": "Carrito Vacío",
+      "allItemsRemoved": "Todos los artículos han sido eliminados de tu carrito"
+    },
     "home": {
       "featured": "Productos Destacados"
     },

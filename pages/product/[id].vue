@@ -88,8 +88,8 @@ function addToCart() {
     }
     toast.add({
       severity: 'success',
-      summary: 'Added to Cart',
-      detail: `${quantity.value} ${quantity.value > 1 ? 'items' : 'item'} added to your cart`,
+      summary: $t('shop.toast.addedToCart'),
+      detail: $t('shop.toast.itemsAdded', { count: quantity.value }),
       life: 3000
     });
   }
