@@ -1,15 +1,18 @@
 import type { Product } from '~/models/product';
+import { API_CONFIG } from '~/config/api';
+import { handleApiError } from '~/utils/errorHandler';
 
 // API service for products
 export default class ProductService {
-  private baseUrl = 'https://fakestoreapi.com'; // Using a fake store API for demonstration
+  private baseUrl = API_CONFIG.baseUrl;
 
   async getProducts(): Promise<Product[]> {
     try {
       const response = await fetch(`${this.baseUrl}/products`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return await response.json();
     } catch (error) {
-      console.error('Error fetching products:', error);
+      console.error('Error fetching products:', handleApiError(error));
       return [];
     }
   }
@@ -17,9 +20,10 @@ export default class ProductService {
   async getProduct(id: number): Promise<Product | null> {
     try {
       const response = await fetch(`${this.baseUrl}/products/${id}`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return await response.json();
     } catch (error) {
-      console.error(`Error fetching product ${id}:`, error);
+      console.error(`Error fetching product ${id}:`, handleApiError(error));
       return null;
     }
   }

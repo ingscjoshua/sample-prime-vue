@@ -65,10 +65,12 @@ export const useCartStore = defineStore('cart', {
     
     saveToSession() {
       if (process.client) {
-        sessionStorage.setItem('cart', JSON.stringify({
+        const data = {
           items: this.items,
-          user: this.user
-        }));
+          user: this.user,
+          timestamp: Date.now()
+        };
+        sessionStorage.setItem('cart', JSON.stringify(data));
       }
     },
     
@@ -77,8 +79,14 @@ export const useCartStore = defineStore('cart', {
         const stored = sessionStorage.getItem('cart');
         if (stored) {
           const data = JSON.parse(stored);
-          this.items = data.items || [];
-          this.user = data.user || null;
+          // Check if data is not older than 24 hours
+          const isExpired = data.timestamp && (Date.now() - data.timestamp > 24 * 60 * 60 * 1000);
+          if (!isExpired) {
+            this.items = data.items || [];
+            this.user = data.user || null;
+          } else {
+            sessionStorage.removeItem('cart');
+          }
         }
       }
     }

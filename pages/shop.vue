@@ -13,15 +13,21 @@
       />
     </div>
     
-    <div v-if="loading" class="loading">
-      <ProgressSpinner strokeWidth="4" animationDuration=".5s" />
+    <div v-if="loading" class="products-grid">
+      <ProductSkeleton v-for="n in 8" :key="n" />
     </div>
     
     <div v-else class="products-grid">
       <div v-for="product in products" :key="product.id" class="product-card">
         <Card>
           <template #header>
-            <img :src="product.image" :alt="product.title" class="product-image" />
+            <NuxtImg 
+              :src="product.image" 
+              :alt="product.title" 
+              class="product-image"
+              loading="lazy"
+              format="webp"
+            />
           </template>
           <template #title>
             <h3 class="product-title">{{ product.title }}</h3>
@@ -49,15 +55,19 @@ import { useCartStore } from '~/stores/cart';
 import { useRouter } from 'vue-router';
 import { useToast } from 'primevue/usetoast';
 import { useI18n } from 'vue-i18n';
+import type { Product } from '~/models/product';
 
+// SEO Meta
+useSeoMeta({
+  title: 'Shop - Browse Products',
+  description: 'Browse our collection of quality products'
+});
 
 const productService = new ProductService();
 const cartStore = useCartStore();
 const router = useRouter();
 const toast = useToast();
 const { t } = useI18n();
-
-import type { Product } from '~/models/product';
 
 const products = ref<Product[]>([]);
 const categories = ref<string[]>([]);

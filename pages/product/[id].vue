@@ -7,7 +7,13 @@
     
     <div v-else-if="product" class="product-content">
       <div class="product-image-container">
-        <img :src="product.image" :alt="product.title" class="product-image" />
+        <NuxtImg 
+          :src="product.image" 
+          :alt="product.title" 
+          class="product-image"
+          loading="lazy"
+          format="webp"
+        />
       </div>
       
       <div class="product-info">
@@ -60,7 +66,20 @@ const { t } = useI18n();
 
 import type { Product } from '~/models/product';
 
+// Dynamic SEO Meta
 const product = ref<Product | null>(null);
+
+watchEffect(() => {
+  if (product.value) {
+    useSeoMeta({
+      title: `${product.value.title} - Product Details`,
+      description: product.value.description,
+      ogTitle: product.value.title,
+      ogDescription: product.value.description,
+      ogImage: product.value.image
+    });
+  }
+});
 const loading = ref(true);
 const quantity = ref(1);
 

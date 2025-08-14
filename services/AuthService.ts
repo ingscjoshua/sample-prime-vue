@@ -1,8 +1,10 @@
 import type { LoginCredentials, RegisterData, AuthResponse, User } from '~/models/user';
+import { API_CONFIG } from '~/config/api';
+import { handleApiError } from '~/utils/errorHandler';
 
 // API service for user authentication
 export default class AuthService {
-  private baseUrl = 'https://fakestoreapi.com'; // Using a fake store API for demonstration
+  private baseUrl = API_CONFIG.baseUrl;
 
   async login(username: string, password: string): Promise<AuthResponse> {
     try {

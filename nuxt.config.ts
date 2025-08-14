@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import Aura from '@primevue/themes/aura';
 export default defineNuxtConfig({
-  modules: ['@primevue/nuxt-module', '@nuxtjs/i18n', '@pinia/nuxt'],
+  modules: ['@primevue/nuxt-module', '@nuxtjs/i18n', '@pinia/nuxt', '@nuxt/image'],
   primevue: {
     options: {
       theme: {
