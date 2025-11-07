@@ -151,7 +151,7 @@ async function handleLogin() {
     }
   } catch (error) {
     console.error('Login error:', error);
-    errorMessage.value = $t('shop.auth.loginError');
+    errorMessage.value = t('shop.auth.loginError');
   } finally {
     loading.value = false;
   }
@@ -183,7 +183,7 @@ async function socialLogin(provider: string) {
     }
   } catch (error) {
     console.error(`${provider} login error:`, error);
-    errorMessage.value = $t('shop.auth.socialLoginError', { provider });
+    errorMessage.value = t('shop.auth.socialLoginError', { provider });
   } finally {
     loading.value = false;
   }

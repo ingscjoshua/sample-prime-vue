@@ -39,11 +39,12 @@
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import ProductService from '~/services/ProductService';
+import type { Product } from '~/models/product';
 
 const router = useRouter();
 const productService = new ProductService();
 
-const featuredProducts = ref<any[]>([]);
+const featuredProducts = ref<Product[]>([]);
 const loading = ref(true);
 
 onMounted(async () => {

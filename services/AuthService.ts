@@ -66,6 +66,7 @@ export default class AuthService {
           firstname: 'Social',
           lastname: 'User',
         },
+        phone: '',
         token: `${provider}-token-${Math.random().toString(36).substring(2, 15)}`,
       };
     } catch (error) {
