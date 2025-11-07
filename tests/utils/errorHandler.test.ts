@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { handleApiError } from '~/utils/errorHandler';
 
 // Mock navigateTo globally
-global.navigateTo = vi.fn();
+(global as any).navigateTo = vi.fn();
 
 describe('errorHandler', () => {
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('errorHandler', () => {
       const result = handleApiError(error);
 
       expect(result).toBe('Authentication required');
-      expect(global.navigateTo).toHaveBeenCalledWith('/login');
+      expect((global as any).navigateTo).toHaveBeenCalledWith('/login');
     });
 
     it('should handle 404 not found error', () => {
